@@ -8,8 +8,8 @@
 	<meta name="description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
 	
 	<meta property="og:description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
-	<meta itemprop="image" content="{% if page.image.url %}{{ site.url }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.icon }}{% endif %}" />
-	<meta property="og:image" content="{% if page.image.url %}{{ site.url }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.icon }}{% endif %}" />
+	<meta itemprop="image" content="{% if page.cover.image %}{{ site.cover.image }}{{ page.cover.image }}{% else %}{{ site.url }}{{ site.icon }}{% endif %}" />
+	<meta property="og:image" content="{% if page.cover.image %}{{ site.url }}{{ page.cover.image }}{% else %}{{ site.url }}{{ site.icon }}{% endif %}" />
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="{{ canonical }}" />
@@ -18,11 +18,12 @@
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:title" content="{{ page.title }}" />
 	<meta property="twitter:description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
-	{% if page.image.url %}<meta property="twitter:image" content="{{ site.url }}{{ page.image.url }}" />{% endif %}
+	{% if page.cover.icon %}<meta property="twitter:image" content="{{ site.url }}{{ page.cover.icon }}" />{% endif %}
 	{% endif %}
 	
 	<title>{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}</title>
-	<link rel="author" href="https://profiles.google.com/114928512048239519236">
+	<meta name="author" content="{{ site.author.name }}">
+	<link rel="author" href="{{ site.author.url }}">
 
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="HandheldFriendly" content="True" />

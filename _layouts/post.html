@@ -3,10 +3,10 @@ layout: default
 article: true
 ---
 
-<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image.url %}{{ page.image.url }}{% else %}{{ site.cover }}{% endif %}); height: 100%;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
-	{% if page.video %}
+<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.cover.image %}{{ page.cover.image }}{% else %}{{ site.cover }}{% endif %}); height: 100%;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
+	{% if page.cover.video %}
 		<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" data-stellar-ratio="0.5">
-		{% for format in page.video %}
+		{% for format in page.cover.video %}
 			<source src="{% for url in format limit:1 offset:1 %}{{ url }}{% endfor %}" type="video/{% for type in format limit:1 %}{{ type }}{% endfor %}">
 		{% endfor %}
 		</video>
@@ -19,9 +19,9 @@ article: true
 		{% endif %}
 		<a class="site-title" href="{{ site.url }}"><div class="site-icon-small" style="background-image: url({{ site.icon }});"></div>{{ site.title }}</a>, {{ page.date | date: "%-d %B %Y"}}
 	</div>
-	{% if page.image.source %}
+	{% if page.cover.source %}
 	<div id="img-info" data-stellar-ratio="0.5">
-		<a href="{{ page.image.source }}" target="_blank" title="Fonte {% if page.video %}do vídeo{% else %}da imagem{% endif %}"><span class="genericon genericon-external"></span></a>
+		<a href="{{ page.cover.source }}" target="_blank" title="{% if page.cover.video %}Video{% else %}Image{% endif %} source"><span class="genericon genericon-external"></span></a>
 	</div>
 	{% endif %}
 	<div id="nav-icon" style="bottom: 30px;" data-stellar-ratio="0.5">
@@ -32,11 +32,11 @@ article: true
 	<div id="article">
 		{{ content }}
 	</div>
-	{% if site.commentsystem %}{% if page.comments != false %}
+	{% if page.comments != false %}
 	<div id="comments">
 		{% include comments.html %}
 	</div>
-	{% endif %}{% endif %}
+	{% endif %}
 </div>
 {% if page.next %}
 	{% capture footer_style %}{% if page.next.dark %}dark{% else %}clean{% endif %}{% endcapture %}
