@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	{% include head.html %}
+	<body>
+		{{ content }}
+		<script>
+		var width = $(window).width()
+		if ( width > 899 )
+		$( function(){
+		    $.stellar({
+			verticalScrolling: true,
+			horizontalOffset: 0,
+			verticalOffset: 0,
+			positionProperty: 'transform',
+			responsive: true
+		    });
+		});
+		</script>
+	</body>
+</html>

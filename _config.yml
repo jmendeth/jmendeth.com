@@ -1,0 +1,54 @@
+# Dependencies
+markdown:	kramdown
+pygments:	true
+
+# Permalinks
+permalink:	/blog/:title
+
+# Setup
+title:		jmendeth
+tagline:	'blog'
+description:	'A personal blog.'
+url:		http://jmendeth.com
+disqus:		jmendeth
+
+author:
+  name:		'Xavier Mendez'
+  url:		https://profiles.google.com/114928512048239519236
+
+paginate:	4
+
+# Custom vars
+icon:		/assets/images/icon.png
+cover:		/assets/images/cover.jpg
+
+social:
+  - icon:	twitter
+    url:	https://twitter.com/jmendeth
+    desc:	Follow me on Twitter
+
+  - icon:	github
+    url:	https://github.com/jmendeth
+    desc:	Fork me on Github
+
+  - icon:	googleplus-alt
+    url:	https://plus.google.com/114928512048239519236
+    desc:	Add me on Google+
+
+  - icon:	feed
+    url:	http://jmendeth.com/atom.xml
+    desc:	Subscribe to my feed
+    
+menu:
+  - title:	Home
+    url:	http://jmendeth.com
+    
+  - title:	About
+    url:	http://jmendeth.com/about
+
+
+copyright:
+  author:	Xavier Mendez
+  url:		http://jmendeth.com
+  type_title:	Some rights reserved
+  type_url:	http://creativecommons.org/licenses/by-nc/3.0
