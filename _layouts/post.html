@@ -21,7 +21,7 @@ article: true
 		<a class="site-title" href="{{ site.url }}"><div class="site-icon-small" style="background-image: url({{ site.icon }});"></div>{{ site.title }}</a>, {{ page.date | date: "%-d %B %Y"}}
 	</div>
 	{% if page.cover.source %}
-	<div id="img-info" data-stellar-ratio="0.5">
+	<div id="cover-info" data-stellar-ratio="0.5">
 		<a href="{{ page.cover.source }}" target="_blank" title="{% if page.cover.video %}Video{% else %}Image{% endif %} source"><span class="genericon genericon-external"></span></a>
 	</div>
 	{% endif %}
