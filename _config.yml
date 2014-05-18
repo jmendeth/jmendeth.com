@@ -10,7 +10,9 @@ title:		jmendeth
 tagline:	'blog'
 description:	'A personal blog.'
 url:		http://jmendeth.com
-disqus:		jmendeth
+
+disqus:
+  shortname:	jmendeth
 
 author:
   name:		'Xavier Mendez'
