@@ -11,16 +11,13 @@ html, body {
 	position: relative;
 }
 
-header {
+header, footer {
 	width: 100%;
 	position: relative;
-}
-
-header, footer {
-	position: relative;
 	background-repeat: no-repeat;
-	background-position: top;
+	background-position: center top;
 	background-size: cover;
+	background-attachment: fixed;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
