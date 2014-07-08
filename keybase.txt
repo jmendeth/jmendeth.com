@@ -1,0 +1,83 @@
+==================================================================
+https://keybase.io/jmendeth
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://jmendeth.com
+  * I am jmendeth (https://keybase.io/jmendeth) on keybase.
+  * I have a public key with fingerprint 6977 D06D 56DE 38E7 8EF7  E5BE 198A EE08 73A3 5C61
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.4.11"
+        },
+        "key": {
+            "fingerprint": "6977d06d56de38e78ef7e5be198aee0873a35c61",
+            "host": "keybase.io",
+            "key_id": "198AEE0873A35C61",
+            "uid": "ee6280262fd2fee3ed1ea42809109400",
+            "username": "jmendeth"
+        },
+        "merkle_root": {
+            "ctime": 1404821218,
+            "hash": "0cedffe0d21167655c06dcc7fb003a4c3fe5f2cb6c3b78312d0944c05ddf0fc76f5b64f0a9b1b66bc7b4b0dad38155593664501fbb7373f56292e61686302ef0",
+            "seqno": 26168
+        },
+        "service": {
+            "hostname": "jmendeth.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1404821381,
+    "expire_in": 157680000,
+    "prev": "e212e785c6e6fdc3869bb08f865909d1256225b15fc00458b58c7dedcd15de63",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+owFdkn1QFGUcx49TEWww0ik9dMZrtakYuJ7dvX127yZIhigaSErnkIg8d599llte
+bq+943i5yDRfRlAqpCB6mcBmIJWiknyb0cESUnlRyLkhJhnESQUPI0pDRm2XoSl7
+/nqe3/N5vr/f9/d73o2aYzCGmSrGI7x7c/iws9cEw7pjQ9sChKCIpYQ9QKACGbt9
++s7NF2LCTuTjUoH3YousmN2KiC15XvMsE0f4seqVFbdGAYvVQpJEeZzO668l2Z2L
+VY8q62IEtLGsCKDIQBHTHGY5LLGYETBp43iMAcfSPM0gSGqaLsXruy8tMaPplEUt
+qvFJKSk6n0QzyTN80cwFxpDiAAUpSaQkjGkskpi3aiEbCWxWAHTQi9VZT3mF2C1i
+n0uvtxCr+QXYqSrKjGvkk3WEtAIrR5EUyWkV8V6XbhFhUZIwECmShCxkGKQZQoiV
+BABo3opoCTMShQSIaIHlaJIStcxWBBhRlICEWCgxArRKgLcJpAChgFjBKgCRF2mO
+ZBjGRkNoZQApCQJLs7TEQMpGYUhCDtKAwpJuwYtfdyuEndKj5fpR9csI62XrXfuf
+OQtSCrU3HlXxKUgp0G5cPp/Hrnv2lXp0shgLzpZZEacgu0VtZv+dKqmh9/dDKzWO
+wCUeWcVOWScYFnJAW3oe7NcHoTVNm682TAwlEdEctAkC4CQOMjZgE0lK80UxAslI
+CAArwwkMh1gRi0gkGRFD+l+XtFYnn6tJeuVcN+8rUjFRvtO4fK4hzGgIn2fUv61h
+QWT0P3/ZdvPBu6tC7TVq458X96SEdexw0I7ohPH5GzLCxaoPY+SXu69+ncNPl5ic
+I8lPV5Cdfnnb5dcGmQlnU+TSKzWHko5kHqKiuoNoLB/U9R0monYl1octHti+8Ntj
+LfuHny97vHQo/vQTeevn4Qs1cfbjt3o+a6hYcJhsdXiz33NPNDp6LhUcaTw3fSqw
+dcuix/iN95ZFVg/+mhc8eWbvW9cms8+Plm3/9AM/uNM43rvy+mjXvTCcKe3ymNOm
+lhyv3LYmuuiBG9ez7QtXxXZ296WYY2LNdRFvhza+0jANKy+11XRsiV+ycihtsu/W
+R00hU0FXq3mCKclFybFZn9cOtu+4sK9xn++5iN8+DpgGgpK8JnjiZmxzybCU6vG1
+3ACJb+Y0qT/Vfflsr2m10TC/vvLknIaz1gF/6o9/pPub9/ygbo6YOjNWnV/+YmZn
+1im5IbShuzW4rN+U4KhqYw3fDaw+/0knKAATHXUt1J2Gg18tdzS4q36+/Eh4cWZ6
+1TfvZAVfCl2ctvweMRS91JOZGng0PX5nWa2x+K+n+p2LRyfDTe/XRlczA8XfJ4xU
+BfLWPrnuGSVU9MbRjN2/WM5lNKO5XxTvT97tavMuiqnu29RzO3WkI3uqt9C14qir
+/XbiC1mtIC1Ye+ChE/mbHCObu+rX3k17GB0YerXyoK/56tb16VeS0UCTs71/+HTN
+ikD82N8=
+=S3U5
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jmendeth
+
+==================================================================
+
