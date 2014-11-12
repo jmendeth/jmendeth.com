@@ -25,15 +25,15 @@ icon:		/assets/images/icon.png
 cover:		/assets/images/cover.jpg
 
 social:
-  - icon:	twitter
+  - icon:	social-twitter
     url:	https://twitter.com/jmendeth
     desc:	Segueix-me a Twitter
 
-  - icon:	github
+  - icon:	social-github
     url:	https://github.com/jmendeth
     desc:	Fork me on Github
 
-  - icon:	googleplus-alt
+  - icon:	social-googleplus-alt
     url:	https://plus.google.com/114928512048239519236
     desc:	Afegeix-me a Google+
 
