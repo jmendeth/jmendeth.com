@@ -27,7 +27,7 @@ cover:		/assets/images/cover.jpg
 social:
   - icon:	twitter
     url:	https://twitter.com/jmendeth
-    desc:	Follow me on Twitter
+    desc:	Segueix-me a Twitter
 
   - icon:	github
     url:	https://github.com/jmendeth
@@ -35,7 +35,7 @@ social:
 
   - icon:	googleplus-alt
     url:	https://plus.google.com/114928512048239519236
-    desc:	Add me on Google+
+    desc:	Afegeix-me a Google+
 
   - icon:	feed
     url:	http://jmendeth.com/atom.xml
