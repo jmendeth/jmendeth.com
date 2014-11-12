@@ -3,7 +3,7 @@ layout: page
 title: About the author
 ---
 
-I honestly don't know what you write here.
+I honestly don't know what to write here.
 
 I'll start by saying I'm a passionate person. I enjoy learning things, and I always try to do something useful with what I learn. They say it's the hacker mindset...
 
