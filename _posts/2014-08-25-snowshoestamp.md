@@ -1,7 +1,7 @@
 ---
 layout: post
-title: SnowShoe Stamp: first impressions
-#cover:
+title: "SnowShoe Stamp: first impressions"
+cover: no
 #  image: /media/2014-08-25-snowshoestamp/cover.png
 quote: Some thoughts about these ingenuous tags.
 comments: 2014-08-25-snowshoestamp
@@ -16,7 +16,7 @@ virtual ones. I have to admit it: when I heard of them, my first thought was
 Later I realized I was completely wrong.
 
 SnowShoe is about stamps that are, well, stamped onto a touchscreen, and then
-recognized about the device.
+recognized by the device.
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/eoTPAoKFKDo" frameborder="0" allowfullscreen></iframe>
 
@@ -30,18 +30,22 @@ So I went to [their Github](https://github.com/snowshoestamp) to learn more
 about the software side (aka SDK) of their engine. Here's what I found out.
 
 > Note: this post is a draft. There may be some typos or wrong assumptions,
-> because I didn't spend time verifying all the info as I usually do.
+> because I didn't spend as much time verifying the info as I usually do.
+
+> **Edit:** they finally released a JS SDK that eliminates the need for a stamp
+> screen, but the other issues explained here still apply.
 
 
 ## Code
 
-Here's the repo that allows one to "host a stamp screen": https://github.com/snowshoestamp/touchy_sdk
+Here's the repo that allows one to "host a stamp screen": [Touchy SDK](https://github.com/snowshoestamp/touchy_sdk)
+
 When the user stamps in this webpage, the data is sent to a "Callback URL".
 To use this stamp screen, you copy the files and edit the `index.html` file to
 insert your own callback / error URLs and background.
 
 The idea of having to direct your user to a specific webpage, stamp, and then
-go back to your application doesn't felt right at all, but I supposed the logic
+go back to your application doesn't feel right at all, but I supposed the logic
 was too complex to be embedded in another webpage.
 
 But it got worse.
@@ -71,7 +75,8 @@ minutes, so I don't care so much about the code.
 ## Design
 
 This is the real problem. I was expecting an SDK that allowed me to match
-the points to the identity. Instead, I pass the points to their API to do the matching.
+the points to the identity. Instead, I have to pass the points to *their* API
+to do the matching.
 
 I can't work offline. I can't do it locally. No, I have to wait for the request
 to go to my server, my server makes an OAuth request to their API, their API
@@ -81,14 +86,15 @@ feedback.
 I wanted a company that would give me the hardware part (the stamps) and would
 leave the software part to me, as happens with NFC tags, or the good ol'
 [fiducials](https://en.wikipedia.org/wiki/Fiducial_marker)! I didn't want to
-register an API key and hand out any requests to them.
+register an API key and hand out every request to them. And what if they suddenly
+decide to start charging for their API?
 
 That's not an ideal business model. SnowShoe: You're doing it wrong.
 
 
 ## It's magic
 
-SnowShoe brands their product like magic. They literally do.
+SnowShoe markets their product like magic. They literally do.
 
 > SnowShoe provides software that once integrated into your project, can identify the stamps when touched to the screen of a multi-touch device, allowing the magic to ensue.
 
@@ -100,7 +106,7 @@ They never talk about touch coordinates or encoded JSON, they say "pattern",
 "digital identity" and "stamp observation data". It's magic.
 
 *Even the "How it Works" page is magic*, they mention the `data` parameter, but
-~~never make an indication to what is actually in that data~~.  
+<del>never make an indication to what is actually in that data</del>.  
 **Edit:** they do, they say "points" are being captured.
 
 I'm a developer, not a kid.
