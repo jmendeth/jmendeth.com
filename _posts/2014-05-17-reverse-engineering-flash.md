@@ -171,7 +171,7 @@ sudo install -m 644 libflashplayer-debug.so /usr/lib/flashplugin-installer
 sudo update-alternatives --install "/usr/lib/mozilla/plugins/flashplugin-alternative.so" "mozilla-flashplugin" /usr/lib/flashplugin-installer/libflashplayer-debug.so 50
 
 # only if you are running 64-bit
-sudo apt-get install ia32-libs nspluginwrapper
+sudo apt-get install libnss3:i386 nspluginwrapper
 sudo nspluginwrapper -i /usr/lib/flashplugin-installer/libflashplayer-debug.so
 sudo mv /usr/lib/mozilla/plugins/npwrapper.libflashplayer-debug.so /usr/lib/flashplugin-installer/libflashplayer-debug.so
 ~~~
@@ -186,7 +186,11 @@ To switch between the regular Flash player and the debugger, do:
 sudo update-alternatives --config mozilla-flashplugin
 ~~~
 
-And restart the web browser to use it.
+And restart the web browser to use it. **Edit:** Chromium recently dropped support for NSAPI,
+so the flash debugger won't work in it. Use another browser instead. If someone knows a way to
+debug with PepperFlash, please post a comment!
+
+Visit `about:plugins` to verify that the correct plugin has loaded.
 
 ### [Vizzy](http://code.google.com/p/flash-tracer)
 
@@ -231,7 +235,7 @@ see what other SWFs are being loaded and serve the reassembled copy instead.
 
 I've been using MITMProxy (which works with HTTPS out of the box, and with IPTables you
 can do transparent proxying) together with a hand-written Node proxy server, but I find
-too low-level.
+that too low-level.
 
 Fiddler also has an alpha build for Linux that looks promising, but it isn't open-source.
 
