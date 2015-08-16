@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Understanding Architect
-cover: no
+cover:
+  image: /media/2015-08-13-understanding-architect/cover.jpg
 quote: This micro-framework is more than a loader, it presents an entirely new way to build Node apps.
 comments: 2015-08-13-understanding-architect
 ---
