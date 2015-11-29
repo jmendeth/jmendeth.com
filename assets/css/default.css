@@ -21,6 +21,11 @@ header, footer {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+header.fullscreen {
+	background-color: #e5e5e5;
+	height: 100%;
+}
+
 header a, footer a {
 	transition-duration: .25s;
 	text-decoration: none;
