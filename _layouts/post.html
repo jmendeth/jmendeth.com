@@ -3,11 +3,11 @@ layout: default
 article: true
 ---
 
-<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.cover.image %}{{ page.cover.image }}{% else %}{{ site.cover }}{% endif %}); height: 100%;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
+<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({{ static_url }}{% if page.cover.image %}{{ page.cover.image }}{% else %}{{ site.cover }}{% endif %}); height: 100%;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
 	{% if page.cover.video %}
 	<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" data-stellar-ratio="0.5">
 		{% for format in page.cover.video %}
-		<source src="{% for url in format limit:1 offset:1 %}{{ url }}{% endfor %}" type="video/{% for type in format limit:1 %}{{ type }}{% endfor %}">
+		<source src="{% for url in format limit:1 offset:1 %}{{ static_url }}{{ url }}{% endfor %}" type="video/{% for type in format limit:1 %}{{ type }}{% endfor %}">
 		{% endfor %}
 	</video>
 	{% endif %}
@@ -18,7 +18,7 @@ article: true
 		{% if page.quote %}
 		<h2>{{ page.quote }}</h2>
 		{% endif %}
-		<a class="site-title" href="{{ site.url }}"><div class="site-icon-small" style="background-image: url({{ site.icon }});"></div>{{ site.title }}</a>, {{ page.date | date: "%-d %B %Y"}}
+		<a class="site-title" href="{{ site.url }}"><div class="site-icon-small" style="background-image: url({{ static_url }}{{ site.icon }});"></div>{{ site.title }}</a>, {{ page.date | date: "%-d %B %Y"}}
 	</div>
 	{% if page.cover.source %}
 	<div id="cover-info" data-stellar-ratio="0.5">
@@ -56,7 +56,7 @@ article: true
 		{% capture footer_quote %}{{ post.quote }}{% endcapture %}
 	{% endfor %}
 {% endif %}
-<footer class="{{ footer_style }}" style="background-image: url({% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 75%; min-height: 500px;">
+<footer class="{{ footer_style }}" style="background-image: url({{ static_url }}{% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 75%; min-height: 500px;">
 	<div id="nav-icon" style="top: 60px;">
 		<a class="scroll" data-speed="500" href="#article"><span class="genericon genericon-collapse"></span></a>
 	</div>
@@ -71,4 +71,4 @@ article: true
 	</div>
 	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
 </footer>
-<script src="/assets/js/smooth-scroll.js"></script>
+<script src="{{ static_url }}/assets/js/smooth-scroll.js"></script>

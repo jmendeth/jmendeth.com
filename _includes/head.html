@@ -30,13 +30,13 @@
 	<meta name="MobileOptimized" content="320" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="stylesheet" href="/assets/css/default.css" />
-	<link rel="stylesheet" media="only screen and (min-width: 900px)" href="/assets/css/desktop.css" />
-	<link rel="stylesheet" media="only screen and (max-width: 899px)" href="/assets/css/mobile.css" />
-	<link rel="stylesheet" href="/assets/css/syntax.css" />
+	<link rel="stylesheet" href="{{ static_url }}/assets/css/default.css" />
+	<link rel="stylesheet" media="only screen and (min-width: 900px)" href="{{ static_url }}/assets/css/desktop.css" />
+	<link rel="stylesheet" media="only screen and (max-width: 899px)" href="{{ static_url }}/assets/css/mobile.css" />
+	<link rel="stylesheet" href="{{ static_url }}/assets/css/syntax.css" />
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fenix:400,400italic">
 
-	<link rel="apple-touch-icon" href="{{ site.url }}{{ site.icon }}">
-	<link rel="shortcut icon" href="{{ site.url }}/assets/images/favicon.ico">
+	<link rel="apple-touch-icon" href="{{ static_url }}{{ site.icon }}">
+	<link rel="shortcut icon" href="{{ static_url }}/assets/images/favicon.ico">
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/atom.xml">
 </head>
