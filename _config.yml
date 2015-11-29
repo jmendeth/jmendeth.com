@@ -4,7 +4,7 @@ highlighter:	pygments
 gems:		[jekyll-paginate]
 
 # Permalinks
-permalink:	/blog/:title
+permalink:	/blog/:title/
 
 # Setup
 title:		jmendeth
