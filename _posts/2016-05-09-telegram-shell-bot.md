@@ -1,10 +1,12 @@
 ---
 published: false
 layout: post
-cover: "no"
-quote: "This handy bot runs commands on demand and sends the live output, allowing you to interact at any time. It can even run graphical apps!"
-comments: "2016-05-09-telegram-shell-bot"
+title: Setting up a Telegram shell bot
+cover: no
+quote: This handy bot runs commands on demand and sends the live output, allowing you to interact at any time. It can even run graphical apps!
+comments: 2016-05-09-telegram-shell-bot
 ---
+
 If you use Telegram regularily, you're probably familiar with [bots](https://core.telegram.org/bots). They're like regular accounts, you can talk to them or have them in groups, they'll do all sorts of useful things for you.
 
 In this post, I present you the [shell bot](https://github.com/jmendeth/node-botgram/tree/master/examples/shell)! Unlike other bots, this one is self-hosted: you use it by running your own instance of the bot in your server.
