@@ -32,7 +32,11 @@ First of all, you need to register a Telegram bot. Don't worry, it only takes so
 
 ## Preparations
 
-The following should be done on the computer you want to run commands on. First of all, make sure you have [Node.JS](https://nodejs.org) installed (you can verify by running `npm -v`).
+The following should be done on the computer you want to run commands on. First of all, make sure you have [Node.JS](https://nodejs.org) installed (you can verify by running `npm -v`). You'll also need a working compiler and build tools:
+
+~~~ bash
+sudo apt-get install build-essential
+~~~
 
 Clone the project and install dependencies:
 
