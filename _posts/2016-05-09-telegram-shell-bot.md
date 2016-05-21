@@ -54,8 +54,7 @@ node examples/print <auth token>
 
 Replacing `<auth token>` with what you got from the BotFather. Then say something to your bot, and it'll print something like:
 
-    Got a message from user 97438879 (Xavier Mendez):
-    
+    Text at user 97438879 (Xavier Mendez):
     [...]
 
 Indicating your numeric ID (mine is 97438879).
