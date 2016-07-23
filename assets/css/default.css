@@ -106,7 +106,7 @@ h3 {
 .site-icon-home {
 	width: 150px;
 	height: 150px;
-	background-size: 150px;
+	background-size: contain;
 	margin: -75px 0 0 -75px;
 	opacity: .9;
 }
@@ -114,7 +114,6 @@ h3 {
 .site-icon-home:hover {
 	width: 160px;
 	height: 160px;
-	background-size: 160px;
 	margin: -80px 0 0 -80px;
 	opacity: 1;
 }
@@ -122,14 +121,14 @@ h3 {
 .site-icon-page {
 	width: 100px;
 	height: 100px;
-	background-size: 100px;
+	background-size: contain;
 	margin: -120px 0 0 -50px;
 }
 
 .site-icon-small {
 	width: 28px;
 	height: 28px;
-	background-size: 28px;
+	background-size: contain;
 	background-repeat: no-repeat;
 	border-radius: 50%;
 	display: inline-block;
