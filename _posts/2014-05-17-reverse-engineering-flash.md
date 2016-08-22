@@ -49,8 +49,9 @@ asset.
 ## ActionScript ByteCode (ABC)
 
 ActionScript source is compiled to bytecode, that is run by the ActionScript
-Virtual Machine. I strongly recommend you to read an [overview of the AVM](http://www.adobe.com/devnet-archive/actionscript/articles/avm2overview.pdf)
-to be able to understand the assembly.
+Virtual Machine. I strongly recommend you to read an
+<a href="{{ site.assets_url }}/media/2014-05-17-reverse-engineering-flash/avm2overview.pdf" target="_blank">overview of the AVM</a>
+now, to be able to understand the assembly better.
 
 ActionScript bytecode is placed into a `DoABC` tag on the SWF. An SWF can
 contain multiple `DoABC` tags. When such a tag is found, the player loads the
