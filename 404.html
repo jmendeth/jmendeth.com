@@ -4,6 +4,9 @@ title: "404"
 image: /assets/images/luke.png
 video:
    mp4: /assets/videos/luke.mp4
+scripts: |
+  <script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
+  <script type="text/javascript">jQuery("#404").fitText(0.18, { maxFontSize: '350px' })</script>
 ---
 
 <div id="post-info">
@@ -14,5 +17,3 @@ video:
 	<a href="{{ site.url }}"><span class="genericon genericon-home"></span></a>
 </div>
 <p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
-<script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
-<script type="text/javascript">jQuery("#404").fitText(0.18, { maxFontSize: '350px' })</script>
