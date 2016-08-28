@@ -19,6 +19,10 @@
 					positionProperty: 'transform',
 					responsive: true
 				});
+				else $("body > header, body > footer").each(function () {
+					var e = $(this);
+					e.height(e.height());
+				});
 			});
 		</script>
 	</body>
