@@ -79,11 +79,11 @@ h3 {
 }
 
 #post-info h2:before {
-	content: "“";
+	content: "\201C";
 }
 
 #post-info h2:after {
-	content: "”";
+	content: "\201D";
 }
 
 #post-info h3 {
