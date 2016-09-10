@@ -107,13 +107,9 @@ And options in your `.ssh/config` set for your AP will be honored. This is
 impossible with `-L`.
 
 
-## Making it even better
+## ssh-from
 
-I've created a simple Python command called [`ssh-from`](https://gist.github.com/jmendeth/346f2233310d8292efe7595d60aa3659).
-<!-- It basically picks a
-free port, runs `ssh <arguments> -D <port>` on the background, and spawns a
-shell with `$all_proxy` (and the like) set as appropiate so that commands will
-use that proxy. -->
+To make it even easier, I made a command called [`ssh-from`](https://gist.github.com/jmendeth/346f2233310d8292efe7595d60aa3659).
 You invoke it just like `ssh`, but instead of getting a remote
 shell to issue commands in, you get a local shell "tunnelled" through that
 host. When you're finished, type `exit` to terminate the proxy.
