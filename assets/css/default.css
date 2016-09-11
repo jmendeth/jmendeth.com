@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe, caption, p {
+html, body, div, span, applet, object, iframe, caption, figure, p {
 	margin: 0 0 0 0;
 	border: 0 0 0 0;
 	font: inherit;
@@ -271,11 +271,16 @@ blockquote, pre, .message {
 	color: #7a7a7a;
 }
 
+pre {
+        color: #464646;
+}
+
 blockquote {
 	border-left: 10px solid #C7F66A;
 }
 
 blockquote p {
+	color: inherit;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
@@ -285,20 +290,20 @@ blockquote p {
 }
 
 code, pre {
-	font-family: Menlo, Monaco, "Courier New", monospace;
+	font-family: Inconsolata, Menlo, Monaco, "Courier New", monospace;
 	background-color: #f9f9f9;
 }
 
 code {
 	padding: .25em .5em;
-	font-size: 85%;
+	font-size: 80%;
 	color: #bf616a;
 	border-radius: 3px;
 }
 
 pre {
 	display: block;
-	font-size: .8rem;
+	font-size: .9rem;
 	line-height: 1.4;
 	white-space: pre;
 	overflow-y: auto;
@@ -310,15 +315,6 @@ pre code {
 	font-size: 100%;
 	color: inherit;
 	background-color: transparent;
-}
-
-.highlight {
-	margin-bottom: 1rem;
-	border-radius: 4px;
-}
-
-.highlight pre {
-	margin-bottom: 0;
 }
 
 .clean {

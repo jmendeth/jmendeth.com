@@ -3,7 +3,7 @@
 .c { color: #999; } /* Comment */
 .err { color: #AA0000; background-color: #FFAAAA } /* Error */
 .k { color: #006699; } /* Keyword */
-.o { color: #555555 } /* Operator */
+.o { color: #7a7a7a } /* Operator */
 .cm { color: #0099FF; font-style: italic } /* Comment.Multiline */
 .cp { color: #009999 } /* Comment.Preproc */
 .c1 { color: #999; } /* Comment.Single */
@@ -60,6 +60,7 @@
 .vg { color: #003333 } /* Name.Variable.Global */
 .vi { color: #003333 } /* Name.Variable.Instance */
 .il { color: #FF6600 } /* Literal.Number.Integer.Long */
+.p { color: #7a7a7a } /* punctuation */
 
 .css .o,
 .css .o + .nt,
