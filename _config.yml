@@ -24,6 +24,7 @@ paginate:       4
 # Custom vars
 icon:           /assets/images/icon.png
 cover:          /assets/images/cover.jpg
+theme_color:	#C15207
 
 social:
   - icon:       social-twitter

@@ -28,7 +28,8 @@
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="MobileOptimized" content="320" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0" />
+	<meta name="theme-color" content="#{% if page.theme_color %}{{ page.theme_color }}{% else %}{{ site.theme_color }}{% endif %}">
 
 	<link rel="stylesheet" href="{{ site.assets_url }}/assets/css/default.css" />
 	<link rel="stylesheet" media="only screen and (min-width: 900px)" href="{{ site.assets_url }}/assets/css/desktop.css" />
