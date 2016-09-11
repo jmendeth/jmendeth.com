@@ -6,6 +6,7 @@ cover:
   source: https://unsplash.com/photos/xNdPWGJ6UCQ
 quote: There's a better way to use SSH tunnels than the standard port redirection we all know and love.
 comments: 2016-09-08-ssh-tunneling
+theme_color: 6B5951
 ---
 
 In case you've never used them, SSH tunnels are freaking useful.

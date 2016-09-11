@@ -6,6 +6,7 @@ cover:
   source: https://github.com/DrKLO/Telegram/blob/master/TMessagesProj/src/main/res/drawable-hdpi/background_hd.jpg
 quote: This handy bot runs commands on demand and sends the live output, allowing you to interact at any time. It can even run graphical apps!
 comments: 2016-05-09-telegram-shell-bot
+theme_color: 042748
 ---
 
 If you use Telegram regularly, you've probably heard of [bots](https://core.telegram.org/bots). They're like regular accounts, you can talk to them or have them in groups and they'll do all sorts of useful things for you.

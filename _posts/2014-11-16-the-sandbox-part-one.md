@@ -7,6 +7,7 @@ cover:
 dark: yes
 quote: "If you're like me, working in an environment where you don't have admin rights was probably frustrating, but no more!"
 comments: 2014-11-16-the-sandbox-part-one
+theme_color: DCCFC5
 ---
 
 Now's my first year at university.

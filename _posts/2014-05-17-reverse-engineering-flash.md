@@ -5,6 +5,7 @@ cover:
   image: /media/2014-05-17-reverse-engineering-flash/cover.jpg
 quote: A complete introduction to reverse-engineering SWFs on Linux, using open-source tools.
 comments: 2014-05-17-reverse-engineering-flash
+theme_color: 912303
 ---
 
 Flash has always intimidated me. Websites usually use it to evade inspection

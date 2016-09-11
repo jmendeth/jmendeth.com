@@ -5,6 +5,7 @@ cover:
   image: /media/2014-12-14-quick-boot-server/cover.jpg
 quote: Ever wanted to boot Linux somewhere, but you don't have a pen at hand? Well, now you can.
 comments: 2014-12-14-quick-boot-server
+theme_color: 0190FE
 ---
 
 Time for a little tutorial!

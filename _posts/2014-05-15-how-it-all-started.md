@@ -5,6 +5,7 @@ cover:
   image: /media/2014-05-15-how-it-all-started/cover.png
 quote: Dinosaurs, faxes and bulbs fueled my curiosity about technology.
 comments: 2014-05-15-how-it-all-started
+theme_color: 2E2E2E
 ---
 
 When I was three years old, my father would take me to the computer, which ran

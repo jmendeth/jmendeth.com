@@ -5,6 +5,7 @@ cover:
   image: /media/2015-08-13-understanding-architect/cover.jpg
 quote: This micro-framework is more than a loader, it presents an entirely new way to build Node apps.
 comments: 2015-08-13-understanding-architect
+theme_color: 081334
 ---
 
 If you have worked with [Cloud9](https://c9.io), you may have heard about
