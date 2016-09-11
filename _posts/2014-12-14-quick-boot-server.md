@@ -31,19 +31,25 @@ Disadvantages:
 
 ## Preparing
 
-    sudo apt-get install dnsmasq syslinux-common nfs-kernel-server
+~~~ bash
+sudo apt-get install dnsmasq syslinux-common nfs-kernel-server
+~~~
 
 Now we have everything we need. But before continuing, edit `/etc/default/dnsmasq`
 and set `ENABLED` to `0` to prevent dnsmasq to start automatically. Then, stop it:
 
-    sudo service dnsmasq stop
+~~~ bash
+sudo service dnsmasq stop
+~~~
 
 And while we're at, you should follow [these steps](http://stackoverflow.com/questions/5321380/disable-network-manager-for-a-particular-interface#6810854)
 to make sure NetworkManager won't mess with the wired interface!
 
 ## Basic setup
 
-    mkdir myserver && cd myserver
+~~~ bash
+mkdir myserver && cd myserver
+~~~
 
 Okay, the first thing is to setup a simple DHCP server with dnsmasq.
 Create `dnsmasq.conf` with this content:
@@ -55,13 +61,17 @@ Create `dnsmasq.conf` with this content:
 
 Let's now start dnsmasq to test the config works:
 
-    sudo ifconfig eth0 up 192.168.99.1/24
-    sudo dnsmasq -C dnsmasq.conf
+~~~ bash
+sudo ifconfig eth0 up 192.168.99.1/24
+sudo dnsmasq -C dnsmasq.conf
+~~~
 
 Now connect an Ethernet cable to the other computer and verify it gets an IP as expected.
 **Bonus!** Dnsmasq already forwards DNS requests and sets the gateway so you just need to:
 
-    sudo iptables -t nat -A POSTROUTING -s 192.168.99.1/24 -j MASQUERADE
+~~~ bash
+sudo iptables -t nat -A POSTROUTING -s 192.168.99.1/24 -j MASQUERADE
+~~~
 
 and now the computer can also access the Internet through the NAT we just created!
 
@@ -73,24 +83,32 @@ Now on to the interesting thing: network booting.
 TFTP is frequently used by bootloaders to download the image when booting via network.
 Let's create the directory we'll serve over TFTP:
 
-    mkdir tftp
+~~~ bash
+mkdir tftp
+~~~
 
 Now take the ISO of your favorite distribution (I recommend LUbuntu) and *extract* its contents
 at the directory we just created:
 
-    mkdir /tmp/iso
-    sudo mount -t iso9660 /path/to/lubuntu.iso /tmp/iso
-    cp -r /tmp/iso/* tftp
-    sudo umount /tmp/iso
+~~~ bash
+mkdir /tmp/iso
+sudo mount -t iso9660 /path/to/lubuntu.iso /tmp/iso
+cp -r /tmp/iso/* tftp
+sudo umount /tmp/iso
+~~~
 
 Now let's put in `pxelinux.0`, which will be the invoked by the bootloader:
 
-    cp /usr/lib/syslinux/pxelinux.0 tftp
+~~~ bash
+cp /usr/lib/syslinux/pxelinux.0 tftp
+~~~
 
 And create the configuration files to tell pxelinux where to find the Linux kernel, and the options:
 
-    mkdir tftp/pxelinux.cfg
-    echo "DEFAULT casper/vmlinuz.efi initrd=casper/initrd.lz boot=casper root=/dev/nfs netboot=nfs nfsroot=192.168.99.1:/absolute/path/to/tftp quiet splash --" > tftp/pxelinux.cfg/default
+~~~ bash
+mkdir tftp/pxelinux.cfg
+echo "DEFAULT casper/vmlinuz.efi initrd=casper/initrd.lz boot=casper root=/dev/nfs netboot=nfs nfsroot=192.168.99.1:/absolute/path/to/tftp quiet splash --" > tftp/pxelinux.cfg/default
+~~~
 
 Make sure `casper/vmlinux.efi` exists within `tftp` and if not, change it as appropiate.
 Same with `casper/initrd.lz`. Also change `/absolute/path/to/tftp` to, well, you know.
@@ -102,8 +120,10 @@ Make sure the paths have no spaces or strange characters in them.
 
 Let's export the `tftp` folder through NFS (so that the booted Linux can access it):
 
-    sudo tee /etc/exports <<< "/absolute/path/to/tftp   192.168.99.0/24(ro,no_subtree_check,fsid=DDD)"
-    sudo service nfs-kernel-server restart
+~~~ bash
+sudo tee -a /etc/exports <<< "/absolute/path/to/tftp   192.168.99.0/24(ro,no_subtree_check,fsid=DDD)"
+sudo service nfs-kernel-server restart
+~~~
 
 (where DDD is a random number)
 
@@ -115,8 +135,10 @@ And finally, let's tell dnsmasq to serve TFTP! Add this to `dnsmasq.conf`:
 
 We're done! Restart dnsmasq:
 
-    sudo killall dnsmasq
-    sudo dnsmasq -C dnsmasq.conf
+~~~ bash
+sudo killall dnsmasq
+sudo dnsmasq -C dnsmasq.conf
+~~~
 
 Now it's time to reboot the other computer, make it boot via network, and pray it'll work.
 Note: it takes some time to boot. Be patient.
@@ -132,26 +154,32 @@ handle that for us.
 
 Create `startserver` next to `dnsmasq.conf`:
 
-    #!/bin/bash
-    # Start a DHCP, DNS and TFTP boot server, and a NAT.
-    cd $(dirname $0)
+{% highlight bash %}
+#!/bin/bash
+# Start a DHCP, DNS and TFTP boot server, and a NAT.
+cd $(dirname $0)
 
-    sudo ifconfig eth0 up 192.168.99.1/24
-    sudo iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -j MASQUERADE
-    sudo dnsmasq -C dnsmasq.conf
+sudo ifconfig eth0 up 192.168.99.1/24
+sudo iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -j MASQUERADE
+sudo dnsmasq -C dnsmasq.conf
+{% endhighlight %}
 
 Create `stopserver` too:
 
-    #!/bin/bash
-    # Start a DHCP, DNS and TFTP boot server, and a NAT.
-    cd $(dirname $0)
+{% highlight bash %}
+#!/bin/bash
+# Start a DHCP, DNS and TFTP boot server, and a NAT.
+cd $(dirname $0)
 
-    sudo killall dnsmasq
-    sudo iptables -t nat -F
+sudo killall dnsmasq
+sudo iptables -t nat -F
+{% endhighlight %}
 
 Make them executable:
 
-    chmod +x startserver stopserver
+~~~ bash
+chmod +x startserver stopserver
+~~~
 
 And that's it! Next time you need to boot Linux on a computer (or need the NAT)
 just do `./startserver` and connect the cable, and `./stopserver` when done.

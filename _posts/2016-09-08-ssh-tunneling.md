@@ -141,18 +141,24 @@ by `tsocks`:
 Want to have `ssh-from` too? To install, make sure you have a compiler,
 python, lsof and tsocks:
 
-    sudo apt-get install build-essential python lsof tsocks
+~~~ bash
+sudo apt-get install build-essential python lsof tsocks
+~~~
 
 Then:
 
-    sudo wget https://gist.github.com/jmendeth/346f2233310d8292efe7595d60aa3659/raw/ssh-from.py -O /usr/local/bin/ssh-from && sudo chmod a+rx /usr/local/bin/ssh-from
-    wget https://gist.github.com/jmendeth/9b3c50226aa82a292a452107b34aca79/raw/ssh-proxy-dialer.c && cc ssh-proxy-dialer.c && sudo install a.out /usr/local/bin/ssh-proxy-dialer && rm ssh-proxy-dialer.c
+~~~ bash
+sudo wget https://gist.github.com/jmendeth/346f2233310d8292efe7595d60aa3659/raw/ssh-from.py -O /usr/local/bin/ssh-from && sudo chmod a+rx /usr/local/bin/ssh-from
+wget https://gist.github.com/jmendeth/9b3c50226aa82a292a452107b34aca79/raw/ssh-proxy-dialer.c && cc ssh-proxy-dialer.c && sudo install a.out /usr/local/bin/ssh-proxy-dialer && rm ssh-proxy-dialer.c
+~~~
 
 Finally, put this at the end of `/etc/ssh/ssh_config`:
 
-    Match exec "ssh-proxy-dialer test"
-    ProxyCommand ssh-proxy-dialer dial '%h' '%p'
-    ProxyUseFdpass yes
+~~~ conf
+Match exec "ssh-proxy-dialer test"
+ProxyCommand ssh-proxy-dialer dial '%h' '%p'
+ProxyUseFdpass yes
+~~~
 
 Was `ssh-from` useful to you? Any suggestions?
 Please let me know in the comments!

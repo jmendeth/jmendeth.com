@@ -27,13 +27,17 @@ So I'm making this series of posts explaining the steps I did to get a bit of **
 
 Let's start with the basics. You don't have root access so you can't install binaries at `/usr/bin`; you need a directory that is always in `PATH`, where you can drop programs and run them as if they were system-wide commands.
 
-    mkdir -p ~/.local/bin
+~~~ bash
+mkdir -p ~/.local/bin
+~~~
 
 In case you didn't know, there's a convention that `.local` is like the `/usr/local` prefix but for individual users (`/usr/local/share` is equivalent to `~/.local/share`, same with `bin`, `lib`, ...). We'll be following this convention.
 
 Now, edit `~/.profile` and append the code:
 
-    export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin
+~~~ bash
+export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin
+~~~
 
 This will add our directory to `PATH` as well as the `sbin` directories where commands like `ifconfig` are stored.
 
@@ -41,11 +45,15 @@ This will add our directory to `PATH` as well as the `sbin` directories where co
 
 And while we're at it, what about having our own directory for *libraries* as well? Maybe our programs depend on libraries which are not installed. So let's do it:
 
-    mkdir -p ~/.local/lib
+~~~ bash
+mkdir -p ~/.local/lib
+~~~
 
 Edit `~/.profile` and append:
 
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+~~~ bash
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+~~~
 
 Now the linker will also load libraries from our local directory.
 
@@ -74,7 +82,9 @@ So we can take that binary and drop it in `.local/bin` and we should be able to 
 That's probably because, in order for `tree` to run, you must install some dependencies too.
 Try to simulate how `apt-get` would install that package:
 
-    apt-get -s install tree
+~~~ bash
+apt-get -s install tree
+~~~
 
 Note the dependencies `apt-get` installs, and repeat the procedure above for each dependency.
 Remember to copy any library you see to `.local/lib`!
@@ -89,8 +99,10 @@ Compile it as you'd do on your computer (i.e. `./configure && make` or whatever 
 
 Instead, create an empty directory and tell `make` to install the files there:
 
-    mkdir test
-    DESTDIR=test make install
+~~~ bash
+mkdir test
+DESTDIR=test make install
+~~~
 
 Examine the files it installed, and copy what you need to the local directories as we did in the previous section.
 

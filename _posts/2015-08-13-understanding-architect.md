@@ -59,10 +59,12 @@ in glorious ASCII art:
 
 Alright, time to start coding!
 
-    mkdir the-logger && cd the-logger
-    echo "Datalogger server" > README.md
-    wget http://jmendeth.mit-license.org -O LICENSE
-    npm install architect
+~~~ bash
+mkdir the-logger && cd the-logger
+echo "Datalogger server" > README.md
+wget http://jmendeth.mit-license.org -O LICENSE
+npm install architect
+~~~
 
 We'll start with `backend` module, or rather, plugin. Which takes us to...
 
@@ -73,7 +75,9 @@ We'll start with `backend` module, or rather, plugin. Which takes us to...
 a `package.json` with some metadata and a JavaScript file with code.
 That's why they need to be in their own folders:
 
-    mkdir backend && cd backend
+~~~ bash
+mkdir backend && cd backend
+~~~
 
 The `package.json` will say: «This is called `backend`, it's a plugin, and it
 wants to use things from `storage`»
@@ -151,8 +155,10 @@ Let's now create the storage plugin. Because we're just testing that
 the whole thing works, and don't want to bring in any database yet,
 the plugin will just store the measures locally, in memory.
 
-    cd ..
-    mkdir local-storage && cd local-storage
+~~~ bash
+cd ..
+mkdir local-storage && cd local-storage
+~~~
 
 This time, the `package.json` looks a bit different. This doesn't depend on
 any plugin, but it provides the `storage` API for other plugins to use.
@@ -216,8 +222,10 @@ advantage of plugin-based apps. More on that later.
 
 Let's use Express for the webserver, and let's make it quick.
 
-    cd ..
-    mkdir web-frontend && cd web-frontend
+~~~ bash
+cd ..
+mkdir web-frontend && cd web-frontend
+~~~
 
 The `package.json` (by now you should know what's coming):
 

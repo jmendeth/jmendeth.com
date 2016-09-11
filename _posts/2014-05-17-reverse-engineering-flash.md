@@ -165,7 +165,7 @@ Sometimes though, RABCDAsm utilities need to be used directly.
 
 ### [Flash Player debugger](http://www.adobe.com/support/flashplayer/downloads.html)
 
-~~~ sh
+~~~ bash
 wget http://fpdownload.macromedia.com/pub/flashplayer/updaters/11/flashplayer_11_plugin_debug.i386.tar.gz
 tar xzOf flashplayer_11_plugin_debug.i386.tar.gz libflashplayer.so > libflashplayer-debug.so
 sudo install -m 644 libflashplayer-debug.so /usr/lib/flashplugin-installer

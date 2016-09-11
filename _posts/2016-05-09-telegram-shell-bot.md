@@ -81,7 +81,7 @@ sudo npm install -g forever
 
 Then, from your `/etc/rc.local` or an init script, call:
 
-~~~
+~~~ bash
 forever start /path/to/node-botgram/examples/shell/server.js <auth token> <your ID>
 ~~~
 
