@@ -35,12 +35,12 @@ social:
     url:        https://github.com/jmendeth
     desc:       Fork me on Github
 
-  - icon:       social-googleplus-alt
-    url:        https://plus.google.com/114928512048239519236
-    desc:       Afegeix-me a Google+
+  - icon:       social-facebook-alt
+    url:        https://facebook.com/jmendeth
+    desc:       Follow me on Facebook
 
   - icon:       feed
-    url:        http://jmendeth.com/atom.xml
+    url:        https://jmendeth.com/atom.xml
     desc:       Subscribe to my feed
     
 menu:
