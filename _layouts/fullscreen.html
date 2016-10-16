@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<header class="fullscreen {% if page.dark %}dark{% else %}clean{% endif %}" style="{% if page.image.url %}background-image: url({{ site.assets_url }}{{ page.image.url }});{% endif %} {% if page.background_position %}background-position: {{ page.background_position }};{% endif %}">
+<header class="fullscreen {% if page.dark %}dark{% else %}clean{% endif %}" style="{% if page.image %}background-image: url({{ site.assets_url }}{{ page.image }});{% endif %} {% if page.background_position %}background-position: {{ page.background_position }};{% endif %}">
 	{% if page.video %}
 		<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
 		{% for format in page.video %}
