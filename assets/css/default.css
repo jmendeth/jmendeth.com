@@ -142,6 +142,7 @@ h3 {
 	height: auto;
 	left: 50%;
 	margin-left: -25px;
+	bottom: 70px;
 	position: absolute;
 	text-align: center;
 	z-index: 2;
