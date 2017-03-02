@@ -67,7 +67,7 @@ Now that we have everything set up, we can run the shell bot:
 ~~~ bash
 cd examples/shell
 npm install
-npm start <auth token> <your ID>
+node server <auth token> <your ID>
 ~~~
 
 If you receive a message saying `Bot ready` then you have a working shell bot! Try saying `/run uname -a` for example, or say `/help` to learn about the available commands.
