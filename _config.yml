@@ -9,7 +9,7 @@ permalink:      /blog/:title/
 # Setup
 title:          jmendeth
 tagline:        'blog'
-description:    'A personal blog.'
+description:    'Personal blog of some weird guy that will hack on everything. Per aquí fent...'
 url:            https://jmendeth.com
 
 disqus:

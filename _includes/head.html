@@ -18,7 +18,19 @@
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:title" content="{{ page.title }}" />
 	<meta property="twitter:description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
-	{% if page.cover.icon %}<meta property="twitter:image" content="{{ site.url }}{{ page.cover.icon }}" />{% endif %}
+	<meta property="twitter:image" content="{% if page.cover.image %}{{ site.url }}{{ page.cover.image }}{% else %}{{ site.url }}{{ site.icon }}{% endif %}" />
+
+	{% elsif page.title == "Home" %}
+	<meta property="og:title" content="{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}" />
+	<meta property="og:description" content="{{ site.description }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ canonical }}" />
+	<meta property="og:site_name" content="jmendeth" />
+	<meta name="description" content="{{ site.description }}" />
+	<meta property="twitter:card" content="summary" />
+	<meta property="twitter:title" content="{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}" />
+	<meta property="twitter:description" content="{{ site.description }}" />
+	<meta property="twitter:image" content="{{ site.url }}{{ site.icon }}" />
 	{% endif %}
 	
 	<title>{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}</title>
