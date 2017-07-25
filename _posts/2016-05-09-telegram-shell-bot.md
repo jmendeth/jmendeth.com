@@ -11,13 +11,13 @@ theme_color: 042748
 
 If you use Telegram regularly, you've probably heard of [bots](https://core.telegram.org/bots). They're like regular accounts, you can talk to them or have them in groups and they'll do all sorts of useful things for you.
 
-In this post, I present you the [shell bot](https://github.com/jmendeth/node-botgram/tree/master/examples/shell)! Unlike other bots, this one is self-hosted: you use it by running your own instance of the bot in your server.
+In this post, I present you the [shell bot](https://github.com/botgram/shell-bot)! Unlike other bots, this one is self-hosted: you use it by running your own instance of the bot in your server.
 
 This handy bot runs commands on demand and sends the live output, allowing you to interact at any time. It can even run graphical apps!
 
 {% include image.html url="/media/2016-05-09-telegram-shell-bot/example-1.jpg" description="The shell bot running some simple commands." %}
 
-It was made as an example for the [botgram](https://github.com/jmendeth/node-botgram) framework, but I've been using it for some time and it's proven to be very useful. When you're on mobile and just want to issue a few commands, talking to a bot is probably more convenient than opening an SSH app and connecting to the server.
+It was made as an example for the [botgram](https://github.com/botgram/botgram) framework, but I've been using it for some time and it's proven to be very useful. When you're on mobile and just want to issue a few commands, talking to a bot is probably more convenient than opening an SSH app and connecting to the server.
 
 {% include image.html url="/media/2016-05-09-telegram-shell-bot/example-2.jpg" description="Graphical application example, alsamixer in this case." %}
 
@@ -27,7 +27,7 @@ If you want to have your own shell bot, this post will guide you through the pro
 
 ## Create your bot
 
-First of all, you need to register a Telegram bot. Don't worry, it only takes some seconds. [Click here](https://telegram.me/BotFather) to talk to the BotFather, then say `/newbot` and you'll be asked some things (name, username, etc.). At the end, you'll be given an **authentication token** that looks like the following:
+First of all, you need to register a Telegram bot. Don't worry, it only takes some seconds. [Click here](https://t.me/BotFather) to talk to the BotFather, then say `/newbot` and you'll be asked some things (name, username, etc.). At the end, you'll be given an **authentication token** that looks like the following:
 
     123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
 
@@ -83,6 +83,6 @@ Then, from your `/etc/rc.local` or an init script, call:
 forever start /path/to/shell-bot/server.js
 ~~~
 
-Also, it's a good idea to talk to the BotFather and say `/setcommands` to define a list of commands your bot accepts. You'll find this list in [`commands.txt`](https://github.com/jmendeth/node-botgram/blob/master/examples/shell/commands.txt); just paste the contents when asked. You may also want to change the bot's profile photo and description.
+Also, it's a good idea to talk to the BotFather and say `/setcommands` to define a list of commands your bot accepts. You'll find this list in [`commands.txt`](https://github.com/botgram/shell-bot/blob/master/commands.txt); just paste the contents when asked. You may also want to change the bot's profile photo and description.
 
 Did you find the bot useful? Got any suggestions? Feel free to tell me about it in the comments!
