@@ -33,44 +33,41 @@ First of all, you need to register a Telegram bot. Don't worry, it only takes so
 
 ## Preparations
 
-The following should be done on the computer you want to run commands on. First of all, make sure you have [Node.JS](https://nodejs.org) installed (you can verify by running `npm -v`). You'll also need a working compiler and build tools:
+> **Edit**: The bot now lives in its own repository and the installation process has been simplified.
+> If you followed a previous version of this post, remove it and follow these steps from the start.
+
+The following should be done on the computer you want to run commands on. First of all, make sure you have [Node.JS](https://nodejs.org) installed (you can verify by running `npm -v`). You'll also need a working compiler and git:
 
 ~~~ bash
-sudo apt-get install build-essential
+sudo apt-get install build-essential git
 ~~~
 
 Clone the project and install dependencies:
 
 ~~~ bash
-git clone https://github.com/jmendeth/node-botgram.git
-cd node-botgram
+git clone https://github.com/botgram/shell-bot.git
+cd shell-bot
 npm install
 ~~~
 
-Now, before running the shell bot, you need to know your numeric **user ID**. To do this, run:
+Then run the bot for the first time, to create the configuration file:
 
 ~~~ bash
-node examples/print <auth token>
+node server
 ~~~
 
-Replacing `<auth token>` with what you got from the BotFather. Then say something to your bot, and it'll print something like:
-
-    Text at user 97438879 (Xavier Mendez):
-    [...]
-
-Indicating your numeric ID (mine is 97438879).
+It will ask you a set of questions, including the auth token that you got from the BotFather,
+and will ask that you talk to your bot (so it can know who his owner is).
 
 ## Run it!
 
 Now that we have everything set up, we can run the shell bot:
 
 ~~~ bash
-cd examples/shell
-npm install
-node server <auth token> <your ID>
+node server
 ~~~
 
-If you receive a message saying `Bot ready` then you have a working shell bot! Try saying `/run uname -a` for example, or say `/help` to learn about the available commands.
+Try saying `/run uname -a` for example, or say `/help` to learn about the available commands.
 
 ## Autostart
 
@@ -83,7 +80,7 @@ sudo npm install -g forever
 Then, from your `/etc/rc.local` or an init script, call:
 
 ~~~ bash
-forever start /path/to/node-botgram/examples/shell/server.js <auth token> <your ID>
+forever start /path/to/shell-bot/server.js
 ~~~
 
 Also, it's a good idea to talk to the BotFather and say `/setcommands` to define a list of commands your bot accepts. You'll find this list in [`commands.txt`](https://github.com/jmendeth/node-botgram/blob/master/examples/shell/commands.txt); just paste the contents when asked. You may also want to change the bot's profile photo and description.
