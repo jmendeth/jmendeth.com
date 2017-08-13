@@ -27,8 +27,11 @@ header.fullscreen {
 }
 
 header a, footer a {
-	transition-duration: .25s;
 	text-decoration: none;
+}
+
+body.transitions header a, body.transitions footer a {
+	transition-duration: .25s;
 	transition-property: width, height, background-size, margin, opacity;
 }
 
@@ -99,9 +102,12 @@ h3 {
 	background-repeat: no-repeat;
 	position: absolute;
 	border-radius: 50%;
+	z-index: 1;
+}
+
+body.transitions #home-title {
 	transition-duration: .25s;
 	transition-delay: .1s;
-	z-index: 1;
 }
 
 .site-icon-home {
@@ -200,14 +206,14 @@ h3 {
 
 #article a {
 	border-bottom: 2px solid #fff;
-	-webkit-transition: 0.5s ease;
+}
+
+body.transitions #article a {
 	transition: 0.5s ease;
 }
 
 #article a:hover {
 	border-bottom: 2px solid #2a7ead;
-	-webkit-transition: 0.5s ease;
-	transition: 0.5s ease;
 }
 
 
@@ -373,6 +379,9 @@ pre code {
 	padding-top: 5px;
 	padding-left: 5px;
 	z-index: 6;
+}
+
+body.transitions .menu {
 	transition-duration: .5s;
 }
 
@@ -510,6 +519,9 @@ pre code {
 #post-list a {
 	color: #555;
 	text-decoration: none;
+}
+
+body.transitions #post-list a {
 	transition-duration: .5s;
 }
 

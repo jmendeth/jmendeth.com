@@ -43,9 +43,9 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0" />
 	<meta name="theme-color" content="#{% if page.theme_color %}{{ page.theme_color }}{% else %}{{ site.theme_color }}{% endif %}">
 
+	<link rel="stylesheet" href="{{ site.assets_url }}/assets/css/default.css" />
 	<link rel="stylesheet" media="only screen and (min-width: 900px)" href="{{ site.assets_url }}/assets/css/desktop.css" />
 	<link rel="stylesheet" media="only screen and (max-width: 899px)" href="{{ site.assets_url }}/assets/css/mobile.css" />
-	<link rel="stylesheet" href="{{ site.assets_url }}/assets/css/default.css" />  <!-- FIXME: hack: load these last because it has transitions -->
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300i,400,700|Fenix:400">
 
 	<link rel="apple-touch-icon" href="{{ site.assets_url }}{{ site.icon }}">

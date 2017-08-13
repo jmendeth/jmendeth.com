@@ -10,6 +10,9 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
 		<script>
 			$(function() {
+				setTimeout(function() {
+					$("body").addClass("transitions");
+				}, 10);
 				var width = $(window).width()
 				if (width > 899) $.stellar({
 					horizontalScrolling: false,
